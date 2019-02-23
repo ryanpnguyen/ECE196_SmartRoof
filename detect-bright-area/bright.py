@@ -41,14 +41,14 @@ middle = int(width/2)
 gray = cv2.GaussianBlur(gray, (args["radius"], args["radius"]), 0)
 (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(gray)
 image = orig.copy()
-cv2.circle(image, maxLoc, args["radius"], (255, 0, 0), 2)
+cv2.circle(image, maxLoc, args["radius"], (0, 0, 255), 2)
 #cv2.line(image,(0,0),(511,511),(255,0,0),5)
 print(maxLoc) #Print location of the sun
 print(type(maxLoc))
 x = maxLoc[0]
 print(x)
 print(middle)
-cv2.line(image,(x, 0),(x, height),(255,0,0),2) #x position of sun line
+cv2.line(image,(x, 0),(x, height),(0,0,255),2) #x position of sun line
 cv2.line(image,(middle, 0),(middle, height),(0,255,0),2) #middle line
 distance = x - middle
 print(distance)
